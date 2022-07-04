@@ -1,8 +1,14 @@
 import { Box } from "@mui/system";
 import { FormControl, TextField } from "@mui/material";
+import { useDispatch } from "react-redux";
+import { changeAmount } from "../redux/questionSlice";
+
 
 const TextFieldComp = () => {
-  const changeHandler = () => {};
+  const dispatch = useDispatch();
+  const changeHandler = (e) => {
+    dispatch(changeAmount(e.target.value))
+  };
 
   return (
     <Box mt={3} width="100%">

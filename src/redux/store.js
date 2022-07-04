@@ -1,6 +1,6 @@
-import { createStore } from "redux";
-import reducer from "./reducer";
+import { configureStore } from "@reduxjs/toolkit";
+import questionReducer from "./questionSlice";
 
-const store = createStore(reducer);
+const store = configureStore({ reducer: { questions: questionReducer } });
 
 export default store;
